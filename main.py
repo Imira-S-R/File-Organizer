@@ -1,6 +1,6 @@
 import os
 
-print('Enter path you want to organize files: ')
+print('Enter path you want to organize files [use /]: ')
 path = input('> ')
 
 for filename in os.listdir(path):
