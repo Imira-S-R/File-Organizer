@@ -20,7 +20,7 @@ for filename in os.listdir(path):
         else:
             os.mkdir(f'{path}\PDF')
             os.replace(f"{path}\{filename}", f"{path}\PDF\{filename}")
-    elif filename.endswith('.png') or filename.endswith('.jpg'):
+    elif filename.endswith('.png') or filename.endswith('.jpg') or filename.endswith('.gif') or filename.endswith('.svg') or filename.endswith('.ps') or filename.endswith('.psd'):
         doesExist = os.path.isdir(f'{path}\Pictures')
         if doesExist:
             print(f'{path}\{filename}')
