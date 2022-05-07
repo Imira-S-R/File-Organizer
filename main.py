@@ -20,7 +20,7 @@ for filename in os.listdir(path):
         else:
             os.mkdir(f'{path}\PDF')
             os.replace(f"{path}\{filename}", f"{path}\PDF\{filename}")
-    elif filename.endswith('.png') or filename.endswith('.jpg') or filename.endswith('.gif') or filename.endswith('.svg') or filename.endswith('.ps') or filename.endswith('.psd'):
+    elif filename.endswith('.png') or filename.endswith('.jpg') or filename.endswith('.gif') or filename.endswith('.svg') or filename.endswith('.ps') or filename.endswith('.psd') or filename.endswith('jpeg'):
         doesExist = os.path.isdir(f'{path}\Pictures')
         if doesExist:
             print(f'{path}\{filename}')
@@ -34,9 +34,9 @@ for filename in os.listdir(path):
             print(f'{path}\{filename}')
             os.replace(f"{path}\{filename}", f"{path}\Executable\{filename}")
         else:
-            os.mkdir(f'{path}\Executable')
+            os.mkdir(f'{path}\Executables')
             os.replace(f"{path}\{filename}", f"{path}\Executable\{filename}")
-    elif filename.endswith('.zip'):
+    elif filename.endswith('.zip') or filename.endswith('.7z'):
         doesExist = os.path.isdir(f'{path}\Zip Files')
         if doesExist:
             print(f'{path}\{filename}')
@@ -76,5 +76,13 @@ for filename in os.listdir(path):
         else:
             os.mkdir(f'{path}\Music')
             os.replace(f"{path}\{filename}", f"{path}\Music\{filename}")
+    elif filename.endswith('.ico'):
+        doesExist = os.path.isdir(f'{path}\Icons')
+        if doesExist:
+            print(f'{path}\{filename}')
+            os.replace(f"{path}\{filename}", f"{path}\Icons\{filename}")
+        else:
+            os.mkdir(f'{path}\Icons')
+            os.replace(f"{path}\{filename}", f"{path}\Icons\{filename}")
     else:
         continue
